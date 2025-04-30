@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conway's Game of Life</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <video class="background-video" autoplay muted loop>
+        <source src="https://cdnjs.cloudflare.com/ajax/libs/Buttons/2.0.0/js/buttons.js" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div id="welcome-screen">
+        <h1 class="title">Conway's Game of Life</h1>
+        <div id="welcome-buttons">
+            <button id="start-game-btn" class="btn">Start Game</button>
+            <button id="keyboard-shortcuts-btn" class="btn">Keyboard Shortcuts</button>
+            <button id="how-what-btn" class="btn">How & What</button>
+            <button id="marketplace-btn" class="btn">Marketplace</button>
+            <button id="theme-toggle" class="btn">Toggle Theme</button>
+            <button id="exit-btn" class="btn">Exit</button>
+        </div>
+    </div>
+
+    <div id="game-container">
+        <div id="controls">
+            <button id="play-pause" class="control-btn">Start</button>
+            <button id="reset" class="control-btn">Reset</button>
+            <button id="randomize" class="control-btn">Randomize</button>
+            <div id="speed-slider-container">
+                <span>Speed:</span>
+                <input type="range" id="speed-slider" min="1" max="20" value="10">
+            </div>
+            <div id="size-controls">
+                <span>Cell Size:</span>
+                <button id="decrease-cells" class="control-btn">-</button>
+                <button id="increase-cells" class="control-btn">+</button>
+            </div>
+            <button id="back-to-menu" class="control-btn">Back to Menu</button>
+        </div>
+        <div id="canvas-container">
+            <canvas id="game-canvas"></canvas>
+        </div>
+    </div>
+
+    <div id="how-what-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Conway's Game of Life</h2>
+            <h3>What is it?</h3>
+            <p>Conway's Game of Life is a cellular automaton devised by mathematician John Horton Conway in 1970. It's a zero-player game, meaning its evolution is determined by its initial state, requiring no further input.</p>
+            <h3>Rules:</h3>
+            <ul>
+                <li>Any live cell with fewer than two live neighbors dies (underpopulation)</li>
+                <li>Any live cell with two or three live neighbors lives on</li>
+                <li>Any live cell with more than three live neighbors dies (overpopulation)</li>
+                <li>Any dead cell with exactly three live neighbors becomes a live cell (reproduction)</li>
+            </ul>
+            <h3>How to play:</h3>
+            <p>Click on cells to toggle them between alive and dead states. Press Start to begin the simulation. You can adjust the speed using the slider. Reset will clear the grid, and Randomize will create a random pattern.</p>
+        </div>
+    </div>
+
+    <div id="keyboard-shortcuts-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Keyboard Shortcuts</h2>
+            <ul>
+                <li><strong>Spacebar</strong>: Start/Stop simulation</li>
+                <li><strong>R</strong>: Randomize the grid</li>
+                <li><strong>C</strong>: Clear/Reset the grid</li>
+                <li><strong>+</strong>: Increase number of cells (decrease cell size)</li>
+                <li><strong>-</strong>: Decrease number of cells (increase cell size)</li>
+                <li><strong>Esc</strong>: Return to main menu</li>
+                <li><strong>T</strong>: Toggle between light and dark theme</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="marketplace" class="marketplace">
+        <div class="marketplace-header">
+            <h1>Game Marketplace</h1>
+            <button id="back-from-marketplace" class="control-btn">Back to Menu</button>
+        </div>
+        <div class="marketplace-grid">
+            <div class="game-card">
+                <img src="stack.png" alt="Game of Life Classic">
+                <h3>Stack Builder</h3>
+                <p>Stack blocks as high as possible with increasing difficulty.</p>
+            </div>
+            <div class="game-card">
+                <img src="runner.png" alt="Game of Life 3D">
+                <h3>Endless Runner</h3>
+                <p>A character auto-runs, and players jump or slide to avoid obstacles.</p>
+            </div>
+            <div class="game-card">
+                <img src="bounce.png" alt="Game of Life: Colors">
+                <h3>Ball Bounce</h3>
+                <p>Control a bouncing ball to land on platforms and avoid spikes.</p>
+            </div>
+            <div class="game-card">
+                <img src="high.png" alt="Highlife">
+                <h3>Highlife</h3>
+                <p>A variant with different birth and survival rules.</p>
+            </div>
+            <div class="game-card">
+                <img src="flip.png" alt="Day &amp; Night">
+                <h3>Memory Flip</h3>
+                <p>Flip cards to find matching pairs.</p>
+            </div>
+            <div class="game-card">
+                <img src="/api/placeholder/300/150" alt="Seeds">
+                <h3>Seeds</h3>
+                <p>A rule variant where cells only reproduce, then die.</p>
+            </div>
+        </div>
+    </div>        
+    <script src="script.js"></script>
+</body>
+</html>
