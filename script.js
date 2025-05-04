@@ -355,6 +355,9 @@ document.addEventListener('keydown', function(event){
     if(event.key === 'R' || event.key === 'r'){
         console.log("r is pressed");
         randomizeGrid();
+    }if(event.key === 'C' || event.key === 'c'){
+        console.log("c is pressed");
+        resetGrid();
     }
     let key = event.key.toLowerCase();
     currentInput += key; 
@@ -408,6 +411,63 @@ document.addEventListener('keydown', function(event){
     }else if(currentInput === "19"){
         //B-Heptomino
         drawPattern("2bo$2obo$2b2o$bo!");
+        currentInput="";
+        return;
+    }else if(currentInput === "20"){
+        //tarantula
+        drawPattern("4bo15bo$3b3o13b3o$9b3ob3o$bo6bobo3bobo6bo$obobo3bo7bo3bobobo$3bob2o2b3ob3o2b2obo$o23bo$2o4b2o9b2o4b2o$2o4b2o9b2o4b2o!");
+        currentInput="";
+        return;
+    }
+
+    else if(currentInput === "21"){
+        //Simkin Glider Gun
+        drawPattern("15bo$13b2o$14b2o3$20b3o$20bo$21bo3$7b2o$7b2o2$3o$2bo$bo6$30b3o$30bo$31bo!");
+        currentInput="";
+        return;
+    }else if(currentInput === "22"){
+        //Copperhead
+        drawPattern("4bo$2b5o$bo5bo$bo2b3o2bo$ob2o3b2obo$bo2b3o2bo$bo5bo$2b5o$4bo3$16b2o$16b2o!");
+        currentInput="";
+        return;
+    }else if(currentInput === "23"){
+        //griddle
+        drawPattern("6o$o4bo$2bobo$2bo!");
+        currentInput="";
+        return;
+    }else if(currentInput === "24"){
+        //replicator
+        drawPattern("2b3o$bo2bo$o3bo$o2bob$3o!");
+        currentInput="";
+        return;
+    }else if(currentInput === "25"){
+        //drylifeflowergarden
+        drawPattern("8bo3bo$7bobobobo$8b2ob2o$b2o15b2o$o2bo13bo2bo$b3o13b3o2$b3o13b3o$o2bo13bo2bo$b2o15b2o$8b2ob2o$7bobobobo$8bo3bo!");
+        currentInput="";
+        return;
+    }else if(currentInput === "26"){
+        //dayandnightfireball
+        drawPattern("6bo$6b2o2$8bo$5bo2bo$5b3o9$3bo$3bo$b3obob2o$ob3ob2obo$ob7o$b9o$3b7o$11o$obob5obo$2b6obo$bob4obo$3b6o$3b5o$3b2o$2b2o$3b2ob2o$3b2obo$4b3o$obob2obo$o2b5o$2b4obo$ob4o$b6o$2b4o$2b4obo$3b4ob2o$3b7o$4b5o$3b7o$11o$11o$b9o$8o$b8o$2b6o$3b4o$4b2o!");
+        currentInput="";
+        return;
+    }else if(currentInput === "27"){
+        //Pedestrian Life
+        drawPattern("2o$2o2$8b2o$7bo2bo$5b2ob2o$5b2ob2o$7bo5$18b3o$18bobo$18b3o7$24b2o$23b3o$23bo2bo$24b2o$37b2o$37bobo$38bo!");
+        currentInput="";
+        return;
+    }else if(currentInput === "28"){
+        //Replicator-based period 96 oscillator in HighLife
+        drawPattern("2o33b$2o10bo22b$11b2o22b$10bobo22b$9b3o23b$35b$15b3o17b$14bobo18b$14b2o19b$14bo20b$35b$35b$35b$35b$35b$35b$35b$33b2o$33b2o!");
+        currentInput="";
+        return;
+    }else if(currentInput === "29"){
+        //p72centuryshuttle
+        drawPattern("51bobo$29b2o19bo$25b2obo2bob2o10b2o2bo4bo$25b2o2bo4bo10b2obo2bob2o$30bo18b2o$31bobo2$34b2o$34b2o10b2o$34bo11b2o$18bo14bobo$18b3o12bob2o4b2o$21bo10bo6bo2b2o$20b2o11b3o4b2o$38bo$26b3o8bo$26bobo$26bo2bo$28b2o5$12bo$13bo$8b3o4b2o16b2o$7bo6bo2b2o14bo$8bob2o4b2o16b3o$8bobo25bo$9bo11b2o$9b2o10b2o$9b2o2$6bobo$5bo18b2o$2o2bo4bo10b2obo2bob2o$2obo2bob2o10b2o2bo4bo$4b2o19bo$26bobo!");
+        currentInput="";
+        return;
+    }else if(currentInput === "30"){
+        //winghfhassler
+        drawPattern("4b2o15bo$2obo2bob2o10bobo$2o2bo4bo10bobo$5bo13b2ob3o$6bobo16bo$19b2ob3o$19b2obo3$11b3o$2o8bo3bo$2o13bo4bo5bo$9bo4bo4b3o3b3o$9b2ob2o4bobobobobobo$11bo5b2obobobobob2o$17bob4ob4obo$17b5o3b5o3$21b2ob2o$20bobobobo$21bo3bo!");
         currentInput="";
         return;
     }
