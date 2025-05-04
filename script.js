@@ -22,6 +22,7 @@ const marketplace = document.getElementById('marketplace');
 const backFromMarketplaceBtn = document.getElementById('back-from-marketplace');
 const decreaseCellsBtn = document.getElementById('decrease-cells');
 const increaseCellsBtn = document.getElementById('increase-cells');
+let currentInput = "";
 
 // Game Variables
 let grid = [];
@@ -349,6 +350,111 @@ window.addEventListener('resize', () => {
     
     draw();
 });
+
+document.addEventListener('keydown', function(event){
+    if(event.key === 'R' || event.key === 'r'){
+        console.log("r is pressed");
+        randomizeGrid();
+    }
+    let key = event.key.toLowerCase();
+    currentInput += key; 
+    console.log(currentInput);
+
+    if(event.shiftKey){
+        console.log("input cleared");
+        currentInput = "";
+    }else if(currentInput === "11"){
+        //glider
+        drawPattern(
+            "bo$2bo$3o!"
+        );
+        currentInput="";
+        return;
+    }else if(currentInput === "12"){
+        //Lightweight Spaceship
+        drawPattern("b2o$o2bo$2obo$b2o!");
+        currentInput = "";
+        return;
+    }else if(currentInput === "13"){
+        //Gosper Glider Gun
+        drawPattern("24bo$22bobo$12b2o6b2o12b2o$11bo3bo4b2o12b2o$2o8bo5bo3b2o$2o8bo3bob2o4bobo$10bo5bo7bo$11bo3bo$12b2o!");
+        currentInput="";
+        return;
+    }else if(currentInput === "14"){
+        //Pulsar
+        drawPattern("6b2o$6b2o3$2o6b2o$2o6b2o3$6b2o$6b2o3$2o6b2o$2o6b2o!");
+        currentInput="";
+        return;
+    }else if(currentInput === "15"){
+        //R-Pentomino
+        drawPattern("b2o$2o$bo!");
+        currentInput="";
+        return;
+    }else if(currentInput === "16"){
+        //Acorn
+        drawPattern("bo5b$3bo3b$2o2b3o!");
+        currentInput="";
+        return;
+    }else if(currentInput === "17"){
+        //Beehive
+        drawPattern("b2o$o2bo$b2o!");
+        currentInput="";
+        return;
+    }else if(currentInput === "18"){
+        //Diehard
+        drawPattern("6bo$2b3o$3o2b2o!");
+        currentInput="";
+        return;
+    }else if(currentInput === "19"){
+        //B-Heptomino
+        drawPattern("2bo$2obo$2b2o$bo!");
+        currentInput="";
+        return;
+    }
+});
+
+function isNumber(char) {
+    return !isNaN(parseInt(char)) && isFinite(char);
+}
+
+function drawPattern(str){
+    resetGrid();
+    let r = 20;
+    let c = 20;
+    let x=r;
+    let y=c;
+    let num=1;
+    for (let i = 0; i < str.length; i++){
+        if(str[i] === 'b'){
+            for(let i=0; i<num; i++){
+                x+=1;
+            }
+            num=1;
+        } else if(str[i] === 'o'){
+            for(let i=0; i<num; i++){
+                grid[x][y] = 1;
+                console.log(x, y);
+                x+=1;
+            }
+            num = 1;
+        } else if(str[i] === '$'){
+            y += 1;
+            x=r;
+        } else if(isNumber(str[i])){
+            let stringNum = "";
+            stringNum+=str[i];
+            while(isNumber(str[i+1])){
+                stringNum+=str[i+1];
+                i+=1;
+            }
+            num = Number(stringNum);
+        } else {
+            console.log("end");
+            break;
+        }
+        draw();
+    }
+}
 
 // Set initial theme button text
 themeToggleBtn.textContent = 'Light Theme';

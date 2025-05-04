@@ -144,6 +144,53 @@ body.light-theme canvas {
     margin: 0 10px;
 }
 
+#speed-slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    background: #e0e0e0;
+    outline: none;
+    margin: 15px 0;
+    transition: all 0.3s ease;
+  }
+  
+  #speed-slider:hover {
+    background: #d0d0d0;
+  }
+  
+  /* For Chrome/Safari */
+  #speed-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #4a6cf7;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  #speed-slider::-webkit-slider-thumb:hover {
+    background: #3a5ce4;
+    transform: scale(1.1);
+  }
+  
+  
+  #speed-slider::-moz-range-thumb:hover {
+    background: #3a5ce4;
+    transform: scale(1.1);
+  }
+  
+  
+  
+  #speed-slider::-ms-thumb:hover {
+    background: #3a5ce4;
+    transform: scale(1.1);
+  }
+   
+
 .modal {
     display: none;
     position: fixed;
